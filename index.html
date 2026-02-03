@@ -2,81 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Brand Outreach Platform</title>
+  <title>Marketivo – AI Brand Outreach Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Access verified AI brand marketing and partnership emails. Built for freelancers & creators.">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e5e7eb;
     }
+
     header {
-      padding: 40px;
+      padding: 80px 20px;
       text-align: center;
     }
-    section {
-      max-width: 900px;
+
+    header h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 700px;
       margin: auto;
-      padding: 20px;
+      color: #cbd5f5;
     }
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+
     .btn {
+      margin-top: 30px;
       display: inline-block;
-      background: #38bdf8;
-      color: #000;
-      padding: 12px 20px;
-      border-radius: 8px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      color: #020617;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
     }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #38bdf8;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 800;
+      color: #22c55e;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 30px;
       color: #94a3b8;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>AI Brand Email Directory</h1>
-  <p>Find verified marketing & partnership emails of AI tools</p>
-  <a href="#pricing" class="btn">Get Access</a>
+  <h1>Marketivo</h1>
+  <p>
+    AI Brand Outreach Platform for Freelancers & Creators.  
+    Get instant access to verified marketing & partnership emails of AI tools.
+  </p>
+  <a href="#pricing" class="btn">Get Instant Access</a>
 </header>
 
 <section>
-  <div class="card">
-    <h2>🔥 What You Get</h2>
-    <ul>
-      <li>✔ 500+ AI Brands</li>
-      <li>✔ Marketing / Partnership Emails</li>
-      <li>✔ Updated Monthly</li>
-      <li>✔ Perfect for Freelancers & Creators</li>
-    </ul>
+  <div class="grid">
+    <div class="card">
+      <h3>Verified AI Brands</h3>
+      <p>500+ AI tools with real marketing & collaboration email contacts.</p>
+    </div>
+    <div class="card">
+      <h3>Save Hours</h3>
+      <p>No more searching brand emails manually. Everything in one place.</p>
+    </div>
+    <div class="card">
+      <h3>Built for Outreach</h3>
+      <p>Perfect for freelancers, creators, agencies & consultants.</p>
+    </div>
   </div>
+</section>
 
-  <div class="card" id="pricing">
-    <h2>💰 Pricing</h2>
-    <p><b>₹149 / month</b></p>
-    <p>Creator Coupon Price: <b>₹99</b></p>
-    <a href="#" class="btn">Subscribe Now</a>
-  </div>
-
-  <div class="card">
-    <h2>🤝 Affiliate Program</h2>
-    <p>Creators earn <b>30% commission</b> on every sale.</p>
+<section id="pricing">
+  <div class="grid">
+    <div class="card">
+      <h3>Monthly Access</h3>
+      <p class="price">₹149</p>
+      <p>Full access to AI brand email directory.</p>
+    </div>
+    <div class="card">
+      <h3>Creator Coupon</h3>
+      <p class="price">₹99</p>
+      <p>Special price using creator referral codes.</p>
+    </div>
+    <div class="card">
+      <h3>Affiliate Program</h3>
+      <p class="price">30%</p>
+      <p>Earn commission on every successful referral.</p>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 YourBrandName • All rights reserved
+  © 2026 Marketivo • AI Brand Outreach Platform
 </footer>
 
 </body>
