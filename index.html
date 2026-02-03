@@ -2,138 +2,302 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Marketivox – Smart Outreach Platform</title>
+<title>Marketivox – Multi-Niche Subscription Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --accent:#38bdf8;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+}
+
+*{box-sizing:border-box}
+
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#0f172a;
-color:#fff;
+  margin:0;
+  font-family:Inter,system-ui,Arial;
+  background:#020617;
+  color:var(--text);
 }
+
+/* ===== LAYOUT ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+
 header{
-padding:60px 20px;
-text-align:center;
-background:linear-gradient(135deg,#6366f1,#22d3ee);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-header h1{
-font-size:42px;
-margin-bottom:10px;
+
+.logo{
+  font-size:26px;
+  font-weight:700;
+  color:var(--accent);
 }
-header p{
-font-size:18px;
-opacity:0.95;
+
+.btn{
+  background:var(--accent);
+  color:#020617;
+  padding:12px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
 }
-section{
-padding:60px 20px;
-max-width:1100px;
-margin:auto;
+
+/* ===== HERO ===== */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  margin-top:80px;
 }
+
+.hero h1{
+  font-size:46px;
+  line-height:1.1;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  margin:20px 0;
+}
+
+.hero-card{
+  background:radial-gradient(circle at top,#1e293b,#020617);
+  border-radius:24px;
+  padding:30px;
+  text-align:center;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  margin-top:100px;
+}
+
+.section h2{
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
 .card{
-background:#111827;
-border-radius:14px;
-padding:30px;
-margin-bottom:30px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  background:var(--card);
+  border-radius:18px;
+  padding:26px;
+  border:1px solid #1e293b;
 }
-.card h2{
-margin-top:0;
-color:#38bdf8;
+
+.card h3{
+  margin-top:0;
 }
-.price-box{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
+
+/* ===== PRICING ===== */
 .price{
-flex:1;
-min-width:260px;
-background:#020617;
-padding:30px;
-border-radius:14px;
-text-align:center;
-border:2px solid #1e293b;
+  font-size:30px;
+  font-weight:800;
+  margin:6px 0;
 }
-.price h3{
-margin:0;
-font-size:24px;
-}
+
 .old{
-text-decoration:line-through;
-color:#94a3b8;
-font-size:18px;
+  text-decoration:line-through;
+  color:#64748b;
+  font-size:16px;
 }
-.new{
-font-size:36px;
-color:#22c55e;
-font-weight:bold;
-}
+
 .badge{
-background:#ef4444;
-padding:6px 14px;
-border-radius:20px;
-display:inline-block;
-margin-bottom:15px;
-font-size:14px;
+  background:#022c22;
+  color:#4ade80;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  display:inline-block;
+  margin-bottom:10px;
 }
+
+/* ===== FOOTER ===== */
 footer{
-text-align:center;
-padding:30px;
-background:#020617;
-color:#94a3b8;
+  border-top:1px solid #1e293b;
+  margin-top:100px;
+  padding:40px 20px;
+  text-align:center;
+  color:#94a3b8;
 }
-button{
-background:#22c55e;
-border:none;
-padding:14px 28px;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-color:#000;
-margin-top:20px;
+
+/* ===== AI CHAT ===== */
+.chat-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--accent);
+  color:#020617;
+  padding:14px 20px;
+  border-radius:50px;
+  font-weight:700;
+  cursor:pointer;
 }
-button:hover{
-background:#16a34a;
+
+.chat{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:320px;
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:18px;
+  box-shadow:0 20px 40px #000;
+  display:none;
+}
+
+.chat-header{
+  padding:14px;
+  border-bottom:1px solid #1e293b;
+  font-weight:600;
+}
+
+.chat-body{
+  padding:14px;
+  font-size:14px;
+  color:#cbd5f5;
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
-<h1>Marketivox</h1>
-<p>AI Brands Outreach • Verified Emails • Faster Collaborations</p>
+  <div class="logo">Marketivox</div>
+  <a href="#pricing" class="btn">View Plans</a>
 </header>
 
-<section>
-<div class="card">
-<h2>Why Marketivox?</h2>
-<p>
-Marketivox helps creators, agencies, and freelancers reach verified AI & SaaS brands instantly.
-No fake emails. No wasted outreach.
-</p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Multi-Niche Email Access<br>for Smart Marketers</h1>
+    <p>
+      Marketivox gives you verified support & partnership emails
+      across multiple niches — in one professional subscription.
+    </p>
+    <a href="#pricing" class="btn">Get Started</a>
+  </div>
 
-<div class="card">
-<h2>Pricing Plan</h2>
+  <div class="hero-card">
+    <h3>What You Get</h3>
+    <p>
+      ✔ Verified brand emails<br>
+      ✔ Multiple niches<br>
+      ✔ Clean & updated data
+    </p>
+  </div>
+</section>
 
-<div class="price-box">
-<div class="price">
-<span class="badge">Limited Time Offer</span>
-<h3>6 Months Access</h3>
-<p class="old">₹2300</p>
-<p class="new">₹1899</p>
-<p>Verified Marketing Emails<br>Instant Access</p>
-<button>Get Access</button>
+<!-- NICHES -->
+<section class="section">
+<h2>Available Niches</h2>
+<div class="grid">
+  <div class="card">🤖 AI & SaaS</div>
+  <div class="card">🎮 Gaming</div>
+  <div class="card">👗 Fashion & Dress</div>
+  <div class="card">🔌 Electronics</div>
+  <div class="card">🎥 Creators</div>
+  <div class="card">🎰 Gambling Apps</div>
 </div>
-</div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+<h2>Pricing Plans</h2>
+
+<div class="grid">
+
+  <!-- 1 MONTH -->
+  <div class="card">
+    <span class="badge">LIMITED OFFER</span>
+    <h3>1 Month</h3>
+    <p class="old">₹3000</p>
+    <p class="price">₹1999</p>
+    <p>
+      ✔ 1 Niche<br>
+      ✔ Email List Access<br>
+      ✔ Support Included
+    </p>
+    <a href="#" class="btn">Subscribe</a>
+  </div>
+
+  <!-- 6 MONTH -->
+  <div class="card">
+    <span class="badge">MOST POPULAR</span>
+    <h3>6 Months</h3>
+    <p class="old">₹2300</p>
+    <p class="price">₹1899</p>
+    <p style="color:#38bdf8;font-size:14px;">Limited Time Offer</p>
+    <p>
+      ✔ 3 Niches Included<br>
+      ✔ Priority Support<br>
+      ✔ Regular Updates
+    </p>
+    <a href="#" class="btn">Subscribe</a>
+  </div>
+
+  <!-- 1 YEAR -->
+  <div class="card">
+    <span class="badge">BEST VALUE</span>
+    <h3>1 Year</h3>
+    <p class="old">₹12000</p>
+    <p class="price">₹8999</p>
+    <p>
+      ✔ 6 Niches Included<br>
+      ✔ Full Access<br>
+      ✔ Premium Support
+    </p>
+    <a href="#" class="btn">Subscribe</a>
+  </div>
 
 </div>
 </section>
 
+</div>
+
 <footer>
-© 2026 Marketivox • All Rights Reserved
+  Support: sumitgarhwal17@gmail.com <br>
+  © 2026 Marketivox. All rights reserved.
 </footer>
+
+<!-- AI CHAT -->
+<div class="chat-btn" onclick="toggleChat()">AI Help 🤖</div>
+
+<div class="chat" id="chatBox">
+  <div class="chat-header">Marketivox AI</div>
+  <div class="chat-body">
+    Hi 👋<br><br>
+    I can help you with:
+    <br>• Choosing plans
+    <br>• Selecting niches
+    <br>• Getting started
+  </div>
+</div>
+
+<script>
+function toggleChat(){
+  const chat=document.getElementById("chatBox");
+  chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
